@@ -1,0 +1,16 @@
+{
+    "name": "skye-prez",
+    "version": "1.0.0",
+    "description": "Nothing fancy, just a Project Skye presentation",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nobbyknox/skye-prez.git"
+    },
+    "author": "Nobby Knox <nobbyknox@gmail.com>",
+    "license": "ISC",
+    "homepage": "https://github.com/nobbyknox/skye-prez#readme",
+    "dependencies": {
+        "reveal.js": "3.5.0"
+    }
+}

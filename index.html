@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Skye</title>
+
+		<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h1>Follow the Leader</h1>
+                    <img src="images/lemmings.jpg">
+                    <h3>Whoever that may be</h3>
+                </section>
+                <section>
+                    <p>
+                        An unimpressive look at a lame implementation of a simple leader election
+                        algorithm and what might be possible, but probably isn't.
+                    </p>
+                </section>
+                <section>
+                    <blockquote>
+                        &ldquo;
+                        These algorithms range from simple to incomprehensible. In order to keep your
+                        sanity, implement something simple that you can understand and debug. Anything
+                        more complex will just kick your arse.
+                        &rdquo;
+                    </blockquote>
+                    <p>~ Someone on the internet</p>
+                </section>
+                <section>
+                    <b>Introducing the <i>Bully</i> Algorithm</b>
+
+                    <p>
+                        Simply put, the lemming that shouts the loudest gets to be the
+                        leader.
+                    </p>
+                </section>
+                <section>
+                    <h3>Traditional Requirements</h3>
+
+                    <p>
+                        Typical implementations have certain assumptions, like peer
+                        discovery and/or specific network topologies.
+                    </p>
+
+                    <p>
+                        Certain algorithms work with certain network topologies. Your choice
+                        is dictated by the infrastructure to a large extent.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>This Implementation - Project Skye</h3>
+
+                    <ul>
+                        <li>Platform agnostic - mixed language lemmings</li>
+                        <li>No assumptions as to network topology</li>
+                        <li>No peer discovery requirement</li>
+                        <li>No network size limitation - 1 to millions of lemmings</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Plus</h3>
+
+                    <p>Task delegation and load balancing. We have a leader, so why not?</p>
+                </section>
+
+                <section>
+                    <h3>Only 1 Requirement</h3>
+
+                    <p>Some communications infrastructure, like:</p>
+
+                    <ul>
+                        <li>ESB</li>
+                        <li>Publish/Subscribe thing</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Skye Algorithm</h3>
+
+                    <ul>
+                        <li>Each lemming chooses a name</li>
+                        <li>Seeks out a leader</li>
+                        <li>Initiates election when no leader found</li>
+                        <li>Election is won by lemming with highest random number between 0 and 1000</li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+		<script src="node_modules/reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
+					{ src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
