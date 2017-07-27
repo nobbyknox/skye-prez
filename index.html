@@ -36,7 +36,7 @@
 
                     <ul>
                         <li>Because I recently came across this problem domain and found it interesting</li>
-                        <li>I wanted to prove the concept and see how difficult it was (208 lines)</li>
+                        <li>I wanted to prove the concept and see how difficult it was to implement (208 lines)</li>
                         <li>Kobus was interested in what I did and wanted to see it</li>
                         <li>This counts towards my peer review <i>knowledge sharing</i> metric - please remember it ;-)</li>
                     </ul>
@@ -59,7 +59,7 @@
                     <h3>This Demo</h3>
 
                     <ul>
-                        <li>Shows a practicle implementation of a leadership election algorithm</li>
+                        <li>Shows a practical implementation of a leadership election algorithm</li>
                         <li>... with a twist</li>
                     </ul>
                 </section>
@@ -102,7 +102,7 @@
                         <li>Asynchronous</li>
                         <li>Platform agnostic - mixed language lemmings - even Bash scripts</li>
                         <li>No assumptions as to network topology</li>
-                        <li>No peer discovery requirement</li>
+                        <li>No peer knowledge/discovery requirement</li>
                         <li>No network size limitation - 1 to millions of lemmings, dependent on the infrastructure</li>
                     </ul>
                 </section>
@@ -120,10 +120,11 @@
                 <section>
                     <h3>But, There's More</h3>
 
-                    <p>
-                        Task delegation and load balancing. We have a leader, so why not have
-                        him/her/it make some decisions?
-                    </p>
+                    <p>(the twist)</p>
+
+                    <p>&gt;&gt; Task delegation and load balancing &lt;&lt;</p>
+
+                    <p>We have a leader, so why not have him/her/it make some decisions?</p>
 
                     <p>
                         <b>Note:</b> This is not part of the leader election algorithm, but something
@@ -144,6 +145,8 @@
                         <li>Seeks out existing leader</li>
                         <li>Initiates election when no leader found</li>
                         <li>Election is won by lemming with highest random number between 0 and 1000</li>
+                        <li>Re-election when leader passes on</li>
+                        <li>Coup detection: leaders commit suicide, forcing new election</li>
                     </ul>
                 </section>
 
