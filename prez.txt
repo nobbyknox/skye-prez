@@ -1,0 +1,39 @@
+Demo 1 - Simple Election
+
+* Start two lemmings; let them choose a leader
+* Add a third
+
+--
+
+Demo 2 - Election in Slo-Mo
+
+* Start only 1; let it become leader
+* Add two more
+* Kill leader; wait for remaining two to select new leader
+
+--
+
+Demo 3 - Going Big
+
+* Start 4; let them choose a leader
+
+--
+
+Demo 4 - Task Allocation
+
+* Start 2; wait for leader
+* # One task is delegated to lemming; leader performs the other
+* Generate random tasks
+* Add 1 lemming; wait for task delegation
+
+--
+
+Demo 5 - Going Even Bigger
+
+* Start 2nd VM (start MQTT)
+* Start 2 lemmings on host 1 and 2 on host 2
+* Generate some work
+* Join the 2 communities into one cluster
+* Split the cluster
+
+--fin--

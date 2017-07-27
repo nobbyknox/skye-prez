@@ -7,7 +7,7 @@
 		<title>Skye</title>
 
 		<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
@@ -24,18 +24,49 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
                 <section>
                     <h1>Follow the Leader</h1>
                     <img src="images/lemmings.jpg">
                     <h3>Whoever that may be</h3>
                 </section>
+
                 <section>
-                    <p>
-                        An unimpressive look at a lame implementation of a simple leader election
-                        algorithm and what might be possible, but probably isn't.
-                    </p>
+                    <h3>Why?</h3>
+
+                    <ul>
+                        <li>Because I recently came across this problem domain and found it interesting</li>
+                        <li>I wanted to prove the concept and see how difficult it was (208 lines)</li>
+                        <li>Kobus was interested in what I did and wanted to see it</li>
+                        <li>This counts towards my peer review <i>knowledge sharing</i> metric - please remember it ;-)</li>
+                    </ul>
                 </section>
+
                 <section>
+                    <h3>The Nots</h3>
+
+                    <ul>
+                        <li>Not relevant to ECN, apart from being cool in a lame way</li>
+                        <li>Not proposed to be used at ECN <b>at all</b></li>
+                        <li>Not to demo complex theory</li>
+                        <li>Not to demo edge cases</li>
+                        <li>Not to discuss reliable task processing during leader and/or
+                            peer disconnects/deaths</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>This Demo</h3>
+
+                    <ul>
+                        <li>Shows a practicle implementation of a leadership election algorithm</li>
+                        <li>... with a twist</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>The Various algorithms</h3>
+
                     <blockquote>
                         &ldquo;
                         These algorithms range from simple to incomprehensible. In order to keep your
@@ -45,8 +76,11 @@
                     </blockquote>
                     <p>~ Someone on the internet</p>
                 </section>
+
                 <section>
-                    <b>Introducing the <i>Bully</i> Algorithm</b>
+                    <h3>Introducing the <i>Bully</i> Algorithm</h3>
+
+                    <p>(because it's simple)</p>
 
                     <p>
                         Simply put, the lemming that shouts the loudest gets to be the
@@ -54,56 +88,67 @@
                     </p>
                 </section>
                 <section>
-                    <h3>Traditional Requirements</h3>
+                    <h3>Traditional <i>Bully</i> Implementations</h3>
 
-                    <p>
-                        Typical implementations have certain assumptions, like peer
-                        discovery and/or specific network topologies.
-                    </p>
+                    <h4>They Make Assumptions</h4>
 
-                    <p>
-                        Certain algorithms work with certain network topologies. Your choice
-                        is dictated by the infrastructure to a large extent.
-                    </p>
+                    <p><a href="https://en.wikipedia.org/wiki/Bully_algorithm">https://en.wikipedia.org/wiki/Bully_algorithm</a></p>
                 </section>
 
                 <section>
-                    <h3>This Implementation - Project Skye</h3>
+                    <h3>My Implementation</h3>
 
                     <ul>
-                        <li>Platform agnostic - mixed language lemmings</li>
+                        <li>Asynchronous</li>
+                        <li>Platform agnostic - mixed language lemmings - even Bash scripts</li>
                         <li>No assumptions as to network topology</li>
                         <li>No peer discovery requirement</li>
-                        <li>No network size limitation - 1 to millions of lemmings</li>
+                        <li>No network size limitation - 1 to millions of lemmings, dependent on the infrastructure</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h3>Plus</h3>
-
-                    <p>Task delegation and load balancing. We have a leader, so why not?</p>
-                </section>
-
-                <section>
-                    <h3>Only 1 Requirement</h3>
-
-                    <p>Some communications infrastructure, like:</p>
+                    <h3>Continued...</h3>
 
                     <ul>
-                        <li>ESB</li>
-                        <li>Publish/Subscribe thing</li>
+                        <li>Resilient to network outages and brittle networks (reconnection and patience)</li>
+                        <li>Self organising communities - coming together and splitting apart</li>
+                        <li>Coup detection and prevention</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h3>Skye Algorithm</h3>
+                    <h3>But, There's More</h3>
+
+                    <p>
+                        Task delegation and load balancing. We have a leader, so why not have
+                        him/her/it make some decisions?
+                    </p>
+
+                    <p>
+                        <b>Note:</b> This is not part of the leader election algorithm, but something
+                        I wanted to do.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Only 1 (big) Requirement</h3>
+
+                    <p>Some communications infrastructure that supports the publish/subscribe pattern</p>
+                </section>
+
+                <section>
+                    <h3>My Algorithm</h3>
 
                     <ul>
-                        <li>Each lemming chooses a name</li>
-                        <li>Seeks out a leader</li>
+                        <li>Seeks out existing leader</li>
                         <li>Initiates election when no leader found</li>
                         <li>Election is won by lemming with highest random number between 0 and 1000</li>
                     </ul>
+                </section>
+
+                <section>
+                    <p>Want to see?</p>
                 </section>
 			</div>
 		</div>
