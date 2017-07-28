@@ -3,7 +3,10 @@ Demo 1 - Simple Election
 * Start two lemmings; let them choose a leader
 * Add a third
 
---
+
+
+
+
 
 Demo 2 - Election in Slo-Mo
 
@@ -11,13 +14,21 @@ Demo 2 - Election in Slo-Mo
 * Add two more
 * Kill leader; wait for remaining two to select new leader
 
---
 
-Demo 3 - Going Big
+
+
+
+
+Demo 3 - Going Big (Asperations)
 
 * Start 4; let them choose a leader
+* Introduce imposter
+  $ mosquitto_pub -t skye/i-am-leader -m '{"name":"imposter"}'
 
---
+
+
+
+
 
 Demo 4 - Task Allocation
 
@@ -26,9 +37,12 @@ Demo 4 - Task Allocation
 * Generate random tasks
 * Add 1 lemming; wait for task delegation
 
---
 
-Demo 5 - Going Even Bigger
+
+
+
+
+Demo 5 - Going Global
 
 * Start 2nd VM (start MQTT)
 * Start 2 lemmings on host 1 and 2 on host 2
